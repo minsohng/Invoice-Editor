@@ -12,18 +12,18 @@ const TotalPage = ({ state }) => {
     <>
       <tr>
         <td colSpan='2'></td>
-        <td colSpan='2'>Subtotal</td>
-        <td>${subTotal}</td>
+        <td className='text-right' colSpan='2'>Subtotal</td>
+        <td className='text-left'>${subTotal}</td>
       </tr>
       <tr>
         <td colSpan='2'></td>
-        <td colSpan='2'>Tax (5%)</td>
-        <td>${taxAmount}</td>
+        <td className='text-right' colSpan='2'>Tax (5%)</td>
+        <td className='text-left'>${taxAmount}</td>
       </tr>
       <tr>
         <td colSpan='2'></td>
-        <td colSpan='2'>Total</td>
-        <td>${Total}</td>
+        <td className='text-right' colSpan='2'>Total</td>
+        <td className='text-left'>${Total}</td>
       </tr> 
     </>
   )

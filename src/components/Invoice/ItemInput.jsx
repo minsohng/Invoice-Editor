@@ -43,6 +43,7 @@ const ItemInput = ({ addItem }) => {
       <td>
         <button className='btn' onClick={onClick}>+</button>
       </td>
+      <td></td>
     </tr>
   )
 }

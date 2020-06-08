@@ -3,7 +3,7 @@ import InvoicePage from './components/Invoice/InvoicePage'
 
 function App() {
   return (
-    <div className="container">
+    <div className='container'>
       <InvoicePage />
     </div>
   )

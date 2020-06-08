@@ -9,12 +9,12 @@ const reducer = (state = [], action) => {
         name: item.name,
         quantity: item.quantity,
         price: item.price,
-        total: getTotal(item.quantity, item.price)
+        total: item.quantity * item.price
       }]
     case EDIT:
       return state.map(state => {
         if (id === state.id) {
-          item.total = getTotal(item.quantity, item.price)
+          item.total = item.quantity * item.price
           return item
         }
         return state
@@ -24,10 +24,6 @@ const reducer = (state = [], action) => {
     default:
       return state
   }
-}
-
-const getTotal = (qty, price) => {
-  return qty * price
 }
 
 export default reducer
