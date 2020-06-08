@@ -12,12 +12,13 @@ const reducer = (state = [], action) => {
         total: item.quantity * item.price
       }]
     case EDIT:
-      return state.map(state => {
-        if (id === state.id) {
+      return state.map(obj => {
+        if (id === obj.id) {
+          item.id = id
           item.total = item.quantity * item.price
           return item
         }
-        return state
+        return obj
       })
     case DELETE:
       return state.filter(item => item.id !== id)
