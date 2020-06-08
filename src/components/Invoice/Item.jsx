@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { actionCreators } from '../../modules/action'
 
@@ -28,9 +28,9 @@ const Item = (props) => {
   return (
     <tr>
       <td>{item.name}</td>
-      <td><input type='text' value={item.quantity} onChange={onChangeQty}/></td>
-      <td><input type='text' value={item.price} onChange={onChangePrice}/></td>
-      <td>{item.total}</td>
+      <td><input type='number' value={item.quantity} onChange={onChangeQty}/></td>
+      <td><input type='number' value={item.price} onChange={onChangePrice}/></td>
+      <td>${item.total}</td>
       <td><button className='btn' onClick={onClick}>X</button></td>
     </tr>
   )

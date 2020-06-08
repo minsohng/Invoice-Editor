@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { actionCreators } from '../../modules/action'
 
 // This component handles user input when adding item
-const ItemInput = ({addItem}) => {
+const ItemInput = ({ addItem }) => {
   const [itemName, setItemName] = useState('')
   const [itemQty, setItemQty] = useState('')
   const [itemPrice, setItemPrice] = useState('')
@@ -38,8 +38,8 @@ const ItemInput = ({addItem}) => {
   return (
     <tr>
       <td><input type='text' value={itemName} onChange={onChangeName}/></td>
-      <td><input type='text' value={itemQty} onChange={onChangeQty}/></td>
-      <td><input type='text' value={itemPrice} onChange={onChangePrice}/></td>
+      <td><input type='number' value={itemQty} onChange={onChangeQty}/></td>
+      <td><input type='number' value={itemPrice} onChange={onChangePrice}/></td>
       <td>
         <button className='btn' onClick={onClick}>+</button>
       </td>

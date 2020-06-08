@@ -1,7 +1,6 @@
 import { ADD, EDIT, DELETE } from './constant'
 
 const addItem = (item) => {
-  console.log('item', item)
   return {
     type: ADD,
     id: Date.now(),
