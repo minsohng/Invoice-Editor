@@ -4,8 +4,9 @@ import Item from './Item'
 import ItemInput from './ItemInput'
 import { actionCreators } from '../../modules/action'
 
-const InvoicePage = ({state, addItem}) => {
-
+// This is top parent component of invoice page
+const InvoicePage = ({ state }) => {
+  console.log(state)
   const itemList = state && state.map((item, i) => {
     return <Item key={i} item={item}/>
   })
@@ -21,7 +22,7 @@ const InvoicePage = ({state, addItem}) => {
             <th>Total</th>
           </tr>
           {itemList}
-          <ItemInput props={addItem}/>
+          <ItemInput/>
         </tbody>
       </table>
     </>
@@ -34,7 +35,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addItem: item => dispatch(actionCreators.addItem(item))
+    editItem: (id, item) => dispatch(actionCreators.editItem(id, item))
   }
 }
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { actionCreators } from '../../modules/action'
 
+// This component handles user input when adding item
 const ItemInput = ({addItem}) => {
   const [itemName, setItemName] = useState('')
   const [itemQty, setItemQty] = useState('')
@@ -29,21 +30,25 @@ const ItemInput = ({addItem}) => {
       quantity: itemQty,
       price: itemPrice,
     })
+    setItemName('')
+    setItemQty('')
+    setItemPrice('')
   }
 
   return (
     <tr>
-      <th><input type='text' value={itemName} onChange={onChangeName}></input></th>
-      <th><input type='text' value={itemQty} onChange={onChangeQty}></input></th>
-      <th><input type='text' value={itemPrice} onChange={onChangePrice}></input></th>
-      <th><button onClick={onClick}>Add a item</button></th>
+      <td><input type='text' value={itemName} onChange={onChangeName}/></td>
+      <td><input type='text' value={itemQty} onChange={onChangeQty}/></td>
+      <td><input type='text' value={itemPrice} onChange={onChangePrice}/></td>
+      <td>
+        <button className='btn' onClick={onClick}>+</button>
+      </td>
     </tr>
   )
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    // onEdit: () => dispatch(actionCreators.deleteItem(ownProps.id)),
     addItem: item => dispatch(actionCreators.addItem(item))
   }
 }
