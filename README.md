@@ -1,3 +1,5 @@
+![](./screens/screenshot.png)
+
 # Invoice Editor
 
 A simple invoice editor application
@@ -17,6 +19,8 @@ To run Redux reducer test:
 ```sh
 npm test
 ```
+
+Then, press `a` to run test.
 
 ## Features
 
